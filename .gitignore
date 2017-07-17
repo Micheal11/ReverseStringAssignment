@@ -18,3 +18,8 @@ node_modules/
 *DS_Store*
 .vscode/
 *.bak
+.history
+.vscode
+.jshintrc
+AttachPointEvent.js
+README.md

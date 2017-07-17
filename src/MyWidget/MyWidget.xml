@@ -6,7 +6,7 @@
             <property key="string" type="attribute">
                 <caption>string</caption>
                 <category>Appearance</category>
-                <description>A sring inserted by the user.</description>
+                <description>A string inserted by the user.</description>
                 <attributeTypes>
                     <attributeType name="String" />
                 </attributeTypes>
