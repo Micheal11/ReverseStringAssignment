@@ -16,7 +16,13 @@ define([
             reverseText: null,
             dropDown: null,
             messageAttribute: null,
-            _contextObj: null,
+            _contextObject: null,
+
+           /* update: function (obj, callback) {
+            logger.debug(this.id + ".update");
+            this._contextObject = messageAttribute;
+           },
+           var myData = _contextObject.get(messageAttribute),*/
             reversingFunction: function () {
                 this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
             },
