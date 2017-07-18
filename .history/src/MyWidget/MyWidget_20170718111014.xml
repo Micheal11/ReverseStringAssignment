@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="MyWidget.widget.MyWidget" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>ReverseWidget</name>
+    <description>The description of this widget.</description>
+        <properties>
+            <property key="string" type="attribute">
+                <caption>string</caption>
+                <category>Appearance</category>
+                <description>A string inserted by the user.</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="messageString" type="string" required="true" defaultValue="">
+                <caption>Message</caption>
+                <category>Appearance</category>
+                <description>The message visible within the widget.</description>
+            </property>
+            <!--> <property key="messageAttribute" type="attribute" required="true" >
+                <caption>Message</caption>
+                <category>Data source</category>
+                <description>This widget reverses a string.</description>
+                <attributeTypes>
+                    <attributeType name = "String">
+                </attributeTypes>
+            </property>     --> 
+            <property key="messageAttribute" type="attribute">
+            <caption>The String</caption>
+            <category>Data source</category>
+            <description>This widget reverses a string.</description>
+            <attributeTypes>
+                <attributeType name="String" />
+            </attributeTypes>
+        </property>
+            <property key="mfToExecute" type="microflow" required="false" defaultValue="">
+                <caption>Microflow</caption>
+                <category>Behavior</category>
+                <description>The microflow to execute on click.</description>
+                <returnType type="Boolean" />
+            </property>
+        </properties>
+</widget>

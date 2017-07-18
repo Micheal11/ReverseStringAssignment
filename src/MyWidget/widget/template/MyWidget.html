@@ -1,13 +1,9 @@
 <div class="widgetname">
     <form>
-        <div class="input-group" data-dojo-attach-point="inputNodes">
-            <div class="input-group-addon"><input type="text" data-dojo-attach-point="insertedString"></div>
-        </div>
-        <div>
-            <b>Insert your String:</b>
-            <p>String: <input type="text" data-dojo-attach-point="myPointedString">
-                <button type="button" data-dojo-attach-event="onClick: reversedString">reverse</button>
-        </div>
+        <div class = form group>
+           Input Text: <input type = "text" class="form-control" placeholder="Please insert text here" data-dojo-attach-point="textToReverse"></br>
+           <button type="button">Save Text</button>
+       </div>
     </form>
     <div class="widgetname-reverseText" data-dojo-attach-point="reverseText" />
 </div>

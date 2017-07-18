@@ -41,14 +41,13 @@ define([
                      this.reversedString(myStrings);
                     // or
 
+                } else {
+                    dojoStyle.set(this.domNode, "display", "none");
                 }
                 this._executeCallback(callback, "_updateRendering");
             },
             reversedString: function (reverseString) {
                 this.reverseText.innerHTML =  reverseString.split("").reverse().join("");
-            },
-            save: function(){
-                consolole.log();
             },
             _executeCallback: function(cb, from) {
                 if(cb && typeof cb === "function") {
