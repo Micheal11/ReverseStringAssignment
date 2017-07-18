@@ -18,11 +18,14 @@ define([
             reversingFunction: function () {
                 this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
             },
-           
             reversedString: function () {
                 this.reverseText.innerHTML = this.myPointedString.value.split("").reverse().join("");
+<<<<<<< HEAD
             },
                         
+=======
+            },            
+>>>>>>> 76f575ceca8f372ddee1df142d4b2718dc867b54
         });
     });
 require(["MyWidget/widget/MyWidget"]);
