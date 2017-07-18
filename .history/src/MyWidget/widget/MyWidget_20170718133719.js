@@ -17,8 +17,10 @@ define([
             dropDown: " ",
             messageAttribute: " ",
             _contextObject: null,
+
            postCreate: function () {
             logger.debug(this.id + ".postCreate");
+
             if (this.readOnly || this.get("disabled") || this.readonly) {
               this._readOnly = true;
             }
