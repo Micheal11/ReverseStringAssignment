@@ -24,32 +24,42 @@ define([
             if (this.readOnly || this.get("disabled") || this.readonly) {
               this._readOnly = true;
             }
+
             this._updateRendering();
+          //  this._setupEvents();
         },
         update: function (object, callback) {
             logger.debug(this.id + ".update");
 
             this._contextObject = object;
             this._resetSubscriptions();
-            this._updateRendering(callback);
+            this._updateRendering(callback); // We're passing the callback to updateRendering to be called after DOM-manipulation
         },
         _updateRendering: function (callback) {
             logger.debug(this.id + "._updateRendering");
             if (this._contextObject !== null) {
                 dojoStyle.set(this.domNode, "display", "block");
-                var myStrings = this._contextObject.get(this.messageAttribute);               
-                dojoHtml.set(this.reverseText, this.reversedString(myStrings));
-                  } else {
+
+                var myStrings = this._contextObject.get(this.messageAttribute);
+
+               
+                dojoHtml.set(this.infoTextNode, this.messageString);
+                dojoStyle.set(this.infoTextNode, "background-color", colorValue);
+            } else {
                 dojoStyle.set(this.domNode, "display", "none");
             }
+
+            // Important to clear all validations!
             this._clearValidations();
+
+            // The callback, coming from update, needs to be executed, to let the page know it finished rendering
             this._executeCallback(callback, "_updateRendering");
         },
             reversingFunction: function () {
-                //this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
+                this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
             },
-            reversedString: function (string) {
-                this.reverseText.innerHTML = this.string.value.split("").reverse().join("");
+            reversedString: function () {
+                this.reverseText.innerHTML = this.myPointedString.value.split("").reverse().join("");
             },                        
         });
     });
