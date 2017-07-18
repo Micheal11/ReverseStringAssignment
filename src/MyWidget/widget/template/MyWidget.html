@@ -4,9 +4,13 @@
             <div class="input-group-addon"><input type="text" data-dojo-attach-point="insertedString"></div>
         </div>
         <div>
-            <b>Insert your String:</b>
-            <p>String: <input type="text" data-dojo-attach-point="myPointedString">
-                <button type="button" data-dojo-attach-event="onClick: reversedString">reverse</button>
+            <b>Dropdown: </b>
+                <select class="widgetname-reverseText" data-dojo-attach-point="dropDown">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
         </div>
     </form>
     <div class="widgetname-reverseText" data-dojo-attach-point="reverseText" />

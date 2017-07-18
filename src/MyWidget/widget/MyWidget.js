@@ -14,6 +14,7 @@ define([
         return declare("MyWidget.widget.MyWidget", [_WidgetBase, _TemplatedMixin], {
             templateString: widgetTemplate,
             reverseText: null,
+            dropDown: null,
             reversingFunction: function () {
                 this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
             },
@@ -21,7 +22,7 @@ define([
             reversedString: function () {
                 this.reverseText.innerHTML = this.myPointedString.value.split("").reverse().join("");
             },
-            
+                        
         });
     });
 require(["MyWidget/widget/MyWidget"]);
