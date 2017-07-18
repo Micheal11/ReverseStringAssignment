@@ -3,22 +3,17 @@ define([
     "mxui/widget/_WidgetBase",
     "dijit/_TemplatedMixin",
     "mxui/dom",
-    "dojo/dom-style",
+    "dojo/_base/lang",
     "dojo/text",
     "dojo/html",
     "dojo/text!MyWidget/widget/template/MyWidget.html"],
-    function (declare, _WidgetBase, _TemplatedMixin, dom, dojoStyle, dojoText, dojoHtml, widgetTemplate) {
+    function (declare, _WidgetBase, _TemplatedMixin, dom, lang, dojoText, dojoHtml, widgetTemplate) {
         "use strict" // this is using strict
         return declare("MyWidget.widget.MyWidget", [_WidgetBase, _TemplatedMixin], {
             templateString: widgetTemplate,
-
-            // dojo attachment point in templatehtml
-            reverseText: "",
-            textToReverse: "",
-
-            // from modeler
-            messageAttribute: "",
-
+            reverseText: " ",
+            dropDown: " ",
+            messageAttribute: " ",
             _contextObject: null,
            postCreate: function () {
                 logger.debug(this.id + ".postCreate");
@@ -30,6 +25,7 @@ define([
             update: function (object, callback) {
                 logger.debug(this.id + ".update");
                 this._contextObject = object;
+                this._resetSubscriptions();
                 this._updateRendering(callback);
             },
             _updateRendering: function (callback) {
@@ -37,23 +33,19 @@ define([
                 if (this._contextObject !== null) {
                     dojoStyle.set(this.domNode, "display", "block");
                     var myStrings = this._contextObject.get(this.messageAttribute);               
-                   // dojoHtml.set(this.reverseText, this.reversedString(myStrings));
-                     this.reversedString(myStrings);
-                    // or
-
-                } else {
+                    dojoHtml.set(this.reverseText, this.reversedString(myStrings));
+                    } else {
                     dojoStyle.set(this.domNode, "display", "none");
                 }
+                this._clearValidations();
                 this._executeCallback(callback, "_updateRendering");
             },
-            reversedString: function (reverseString) {
-                this.reverseText.innerHTML =  reverseString.split("").reverse().join("");
-            },
-            _executeCallback: function(cb, from) {
-                if(cb && typeof cb === "function") {
-                    cb();
-                }
-            }                        
+                reversingFunction: function () {
+                    //this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
+                },
+                reversedString: function (string) {
+                    this.reverseText.innerHTML = this.string.value.split("").reverse().join("");
+                },                        
         });
     }
 );

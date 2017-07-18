@@ -14,9 +14,6 @@ define([
 
             // dojo attachment point in templatehtml
             reverseText: "",
-            textToReverse: "",
-
-            // from modeler
             messageAttribute: "",
 
             _contextObject: null,
@@ -37,8 +34,8 @@ define([
                 if (this._contextObject !== null) {
                     dojoStyle.set(this.domNode, "display", "block");
                     var myStrings = this._contextObject.get(this.messageAttribute);               
-                   // dojoHtml.set(this.reverseText, this.reversedString(myStrings));
-                     this.reversedString(myStrings);
+                    dojoHtml.set(this.reverseText, this.reversedString(myStrings));
+                    // this.reversedString(myStrings);
                     // or
 
                 } else {
@@ -47,7 +44,7 @@ define([
                 this._executeCallback(callback, "_updateRendering");
             },
             reversedString: function (reverseString) {
-                this.reverseText.innerHTML =  reverseString.split("").reverse().join("");
+                return reverseString.split("").reverse().join("");
             },
             _executeCallback: function(cb, from) {
                 if(cb && typeof cb === "function") {
