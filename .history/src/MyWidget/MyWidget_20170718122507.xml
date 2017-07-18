@@ -24,7 +24,7 @@
                     <attributeType name = "String">
                 </attributeTypes>
             </property>     --> 
-           <property key="messageAttribute" type="attribute">
+            <property key="messageAttribute" type="attribute">
             <caption>Message</caption>
             <category>Data source</category>
             <description>This widget reverses a string.</description>

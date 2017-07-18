@@ -13,7 +13,7 @@ define([
     "use strict" // this is using strict
         return declare("MyWidget.widget.MyWidget", [_WidgetBase, _TemplatedMixin], {
             templateString: widgetTemplate,
-            reverseText: " ",
+            reverseText: null,
             dropDown: null,
             messageAttribute: " ",
             _contextObject: null,
