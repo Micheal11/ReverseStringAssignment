@@ -16,22 +16,14 @@
                 <category>Appearance</category>
                 <description>The message visible within the widget.</description>
             </property>
-            <!--> <property key="messageAttribute" type="attribute" required="true" >
+     <!-->       <property key="messageAttribute" type="attribute" required="true" defaultValue="">
                 <caption>Message</caption>
                 <category>Data source</category>
                 <description>This widget reverses a string.</description>
                 <attributeTypes>
                     <attributeType name = "String">
                 </attributeTypes>
-            </property>     --> 
-           <!--> <property key="messageAttribute" type="attribute">
-            <caption>Message</caption>
-            <category>Data source</category>
-            <description>This widget reverses a string.</description>
-            <attributeTypes>
-                <attributeType name="String" />
-            </attributeTypes>
-        </property> -->
+            </property>   -->     
             <property key="mfToExecute" type="microflow" required="false" defaultValue="">
                 <caption>Microflow</caption>
                 <category>Behavior</category>

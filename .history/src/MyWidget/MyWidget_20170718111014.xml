@@ -24,14 +24,14 @@
                     <attributeType name = "String">
                 </attributeTypes>
             </property>     --> 
-           <!--> <property key="messageAttribute" type="attribute">
-            <caption>Message</caption>
+            <property key="messageAttribute" type="attribute">
+            <caption>The String</caption>
             <category>Data source</category>
             <description>This widget reverses a string.</description>
             <attributeTypes>
                 <attributeType name="String" />
             </attributeTypes>
-        </property> -->
+        </property>
             <property key="mfToExecute" type="microflow" required="false" defaultValue="">
                 <caption>Microflow</caption>
                 <category>Behavior</category>
