@@ -17,11 +17,9 @@ define([
             reversingFunction: function () {
                 this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
             },
-           
             reversedString: function () {
                 this.reverseText.innerHTML = this.myPointedString.value.split("").reverse().join("");
-            },
-            
+            },            
         });
     });
 require(["MyWidget/widget/MyWidget"]);
