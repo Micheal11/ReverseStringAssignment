@@ -3,13 +3,18 @@
     <name>ReverseWidget</name>
     <description>The description of this widget.</description>
      <properties>
-        <property key="messageAttribute" type="attribute">
-            <caption>Data Source</caption>
+        <property key="backgroundColor" type="attribute">
+            <caption>Background Color</caption>
             <category>Appearance</category>
-            <description>A string is reversed by the widget</description>
+            <description>The background color of the widget.</description>
             <attributeTypes>
                 <attributeType name="String" />
             </attributeTypes>
+        </property>
+        <property key="messageString" type="string" required="true" defaultValue="">
+            <caption>Message</caption>
+            <category>Appearance</category>
+            <description>The message visible within the widget.</description>
         </property>
         <property key="mfToExecute" type="microflow" required="false" defaultValue="">
             <caption>Microflow</caption>
