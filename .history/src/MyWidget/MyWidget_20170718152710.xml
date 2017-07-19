@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="MyWidget.widget.MyWidget" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>ReverseWidget</name>
+    <description>The description of this widget.</description>
+     <properties>
+        <property key="insertText" type="attribute">
+            <caption>Data Source</caption>
+            <category>Appearance</category>
+            <description>A string is reversed by the widget</description>
+            <attributeTypes>
+                <attributeType name="String" />
+            </attributeTypes>
+        </property>
+    </properties>
+</widget>

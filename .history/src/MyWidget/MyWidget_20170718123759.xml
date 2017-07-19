@@ -3,26 +3,24 @@
     <name>ReverseWidget</name>
     <description>The description of this widget.</description>
      <properties>
-        <property key="insertText" type="attribute" entityProperty="reverseEntity" >
-            <caption>Data Source</caption>
+        <property key="backgroundColor" type="attribute">
+            <caption>Background Color</caption>
             <category>Appearance</category>
-            <description>A string is reversed by the widget</description>
+            <description>The background color of the widget.</description>
             <attributeTypes>
                 <attributeType name="String" />
             </attributeTypes>
         </property>
-        <property key="mfToExecute" type="microflow" required="true" defaultValue="">
+        <property key="messageString" type="string" required="true" defaultValue="">
+            <caption>Message</caption>
+            <category>Appearance</category>
+            <description>The message visible within the widget.</description>
+        </property>
+        <property key="mfToExecute" type="microflow" required="false" defaultValue="">
             <caption>Microflow</caption>
             <category>Behavior</category>
             <description>The microflow to execute on click.</description>
             <returnType type="Boolean" />
         </property>
-
-        <property key="reverseEntity" type="entity" required="false" defaultValue="">
-            <caption>Entity</caption>
-            <category>Behavior</category>
-            <description>This is the entity</description>
-        </property>
-
     </properties>
 </widget>

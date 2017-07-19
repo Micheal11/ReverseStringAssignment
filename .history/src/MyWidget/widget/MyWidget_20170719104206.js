@@ -44,15 +44,15 @@ define([
                     this._contextObject.set(this.backgroundColor, this.colorSelectNode.value);
                 });
 
-                /* this.connect(this.infoTextNode, "click", function (e) {
-                     // Only on mobile stop event bubbling!
-                     this._stopBubblingEventOnMobile(e);
- 
-                     // If a microflow has been set execute the microflow on a click.
-                     if (this.mfToExecute !== "") {
-                         this._execMf(this.mfToExecute, this._contextObj.getGuid());
-                     }
-                 });*/
+               /* this.connect(this.infoTextNode, "click", function (e) {
+                    // Only on mobile stop event bubbling!
+                    this._stopBubblingEventOnMobile(e);
+
+                    // If a microflow has been set execute the microflow on a click.
+                    if (this.mfToExecute !== "") {
+                        this._execMf(this.mfToExecute, this._contextObj.getGuid());
+                    }
+                });*/
             },
             _execMf: function (mf, guid, cb) {
                 logger.debug(this.id + "._execMf");
@@ -84,44 +84,28 @@ define([
                     this.saveFunction(_contextObject);
                     // or
 
+                } else {
+                    dojoStyle.set(this.domNode, "display", "none");
                 }
                 this._executeCallback(callback, "_updateRendering");
             },
             reversedString: function (reverseString) {
                 this.reverseText.innerHTML = reverseString.split("").reverse().join("");
             },
-
-            createTag: function () {
-                mx.data.create({
-                    entity: this.reverseEntity,
-                    callback: lang.hitch(this, function (obj) {
-                        obj.set(this.insertText, this.textToReverse.value);
-                        this.saveTag(obj),
-                            console.log("Object created on server");
-                    }),
-                    error: function (e) {
-                        console.log("an error occured: " + e);
-                    }
-                });
-            },
-            saveTag: function (object) {
-                mx.data.commit({
-                    mxobj: object,
-                    callback: function () {
-                        console.log("Object committed");
-                    },
-                    error: function (error) {
-                        console.log("Error occurred attempting to commit: " + error);
-                    }
-                });
-            },
             _executeCallback: function (cb, from) {
                 if (cb && typeof cb === "function") {
                     cb();
                 }
-            }
+            },
+            /*saveFunction: function () {
+                mx.data.save({
+                    mxobj: _contextObject,
+                    callback: function () {
+                        console.log("ok");
+                    }
+                });
+            },*/
         });
     }
 );
 require(["MyWidget/widget/MyWidget"]);
-
