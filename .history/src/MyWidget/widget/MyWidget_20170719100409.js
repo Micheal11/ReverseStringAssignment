@@ -40,10 +40,12 @@ define([
             _setupEvents: function () {
                 logger.debug(this.id + "._setupEvents");
                 this.connect(this.colorSelectNode, "change", function (e) {
+                    // Function from mendix object to set an attribute.
                     this._contextObject.set(this.backgroundColor, this.colorSelectNode.value);
                 });
 
                 this.connect(this.infoTextNode, "click", function (e) {
+                 //   this._stopBubblingEventOnMobile(e);
                     if (this.mfToExecute !== "") {
                         this._execMf(this.mfToExecute, this._contextObj.getGuid());
                     }

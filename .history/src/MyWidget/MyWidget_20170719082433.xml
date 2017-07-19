@@ -11,7 +11,7 @@
                 <attributeType name="String" />
             </attributeTypes>
         </property>
-        <property key="mfToExecute" type="microflow" required="true" defaultValue="">
+        <property key="mfToExecute" type="microflow" required="false" defaultValue="">
             <caption>Microflow</caption>
             <category>Behavior</category>
             <description>The microflow to execute on click.</description>
