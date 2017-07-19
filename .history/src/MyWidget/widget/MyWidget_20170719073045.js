@@ -40,7 +40,6 @@ define([
                     var textValue = this._contextObject.get(this.insertText);
                     // dojoHtml.set(this.reverseText, this.reversedString(textValue));
                     this.reversedString(textValue);
-                    this.saveFunction(_contextObject);
                     // or
 
                 } else {
@@ -55,15 +54,15 @@ define([
                 if (cb && typeof cb === "function") {
                     cb();
                 }
-            },
-            /*saveFunction: function () {
+            }
+            saveFunction: function () {
                 mx.data.save({
                     mxobj: _contextObject,
                     callback: function () {
                         console.log("ok");
                     }
                 });
-            },*/
+            },
         });
     }
 );
