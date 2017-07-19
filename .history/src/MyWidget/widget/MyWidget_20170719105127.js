@@ -9,7 +9,7 @@ define([
     "dojo/html",
     "dojo/text!MyWidget/widget/template/MyWidget.html"],
     function (declare, _WidgetBase, _TemplatedMixin, dom, dojoStyle, lang, dojoText, dojoHtml, widgetTemplate) {
-        "use strict"
+        "use strict" 
         return declare("MyWidget.widget.MyWidget", [_WidgetBase, _TemplatedMixin], {
             templateString: widgetTemplate,
             reverseText: "",
