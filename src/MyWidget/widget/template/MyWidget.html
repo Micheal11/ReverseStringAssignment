@@ -1,16 +1,9 @@
 <div class="widgetname">
     <form>
-        <div class = form group>
-           Input Text: <input type = "text" class="form-control" placeholder="Please insert text here" data-dojo-attach-point="textToReverse"></br>
-           <button type="button">Save Text</button>
-       </div>
+        <div class=f orm group>
+            Input Text: <input type="text" class="form-control" placeholder="Please insert text here" data-dojo-attach-point="textToReverse"></br>
+            <button type="button" data-dojo-attach-event="onclick:saveTag">Save Text</button>
+        </div>
     </form>
     <div class="widgetname-reverseText" data-dojo-attach-point="reverseText" />
 </div>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("p").text("Hello world!");
-    });
-});
-</script>

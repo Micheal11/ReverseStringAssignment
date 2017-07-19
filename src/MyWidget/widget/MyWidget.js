@@ -20,10 +20,10 @@ define([
             messageAttribute: "",
 
             _contextObject: null,
-           postCreate: function () {
+            postCreate: function () {
                 logger.debug(this.id + ".postCreate");
                 if (this.readOnly || this.get("disabled") || this.readonly) {
-                this._readOnly = true;
+                    this._readOnly = true;
                 }
                 this._updateRendering();
             },
@@ -36,26 +36,36 @@ define([
                 logger.debug(this.id + "._updateRendering");
                 if (this._contextObject !== null) {
                     dojoStyle.set(this.domNode, "display", "block");
-                    var myStrings = this._contextObject.get(this.messageAttribute);               
-                   // dojoHtml.set(this.reverseText, this.reversedString(myStrings));
-                     this.reversedString(myStrings);
+                    var myStrings = this._contextObject.get(this.messageAttribute);
+                    // dojoHtml.set(this.reverseText, this.reversedString(myStrings));
+                    this.reversedString(myStrings);
                     // or
 
                 }
                 this._executeCallback(callback, "_updateRendering");
             },
             reversedString: function (reverseString) {
-                this.reverseText.innerHTML =  reverseString.split("").reverse().join("");
+                this.reverseText.innerHTML = reverseString.split("").reverse().join("");
             },
-            save: function(){
-                consolole.log();
+
+            saveTag: function (_contextObject) {
+                mx.data.commit({
+                    callback: function () {
+                        console.log("Object committed");
+                    },
+                    error: function (e) {
+                        console.error("Could not commit object:", e);
+                    }
+                });
             },
-            _executeCallback: function(cb, from) {
-                if(cb && typeof cb === "function") {
+
+            _executeCallback: function (cb, from) {
+                if (cb && typeof cb === "function") {
                     cb();
                 }
-            }                        
+            }
         });
     }
 );
 require(["MyWidget/widget/MyWidget"]);
+
