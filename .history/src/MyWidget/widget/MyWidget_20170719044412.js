@@ -18,7 +18,7 @@ define([
             mfToExecute:"",
 
             // from modeler
-            messageAttribute: "",
+            insertText: "",
 
             _contextObject: null,
            postCreate: function () {
@@ -37,9 +37,9 @@ define([
                 logger.debug(this.id + "._updateRendering");
                 if (this._contextObject !== null) {
                     dojoStyle.set(this.domNode, "display", "block");
-                    var myStrings = this._contextObject.get(this.messageAttribute);               
-                   // dojoHtml.set(this.reverseText, this.reversedString(myStrings));
-                     this.reversedString(myStrings);
+                    var textValue = this._contextObject.get(this.insertText);               
+                   // dojoHtml.set(this.reverseText, this.reversedString(textValue));
+                     this.reversedString(textValue);
                     // or
 
                 } else {

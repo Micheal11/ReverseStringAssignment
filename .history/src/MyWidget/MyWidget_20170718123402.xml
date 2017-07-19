@@ -16,7 +16,7 @@
                 <category>Appearance</category>
                 <description>The message visible within the widget.</description>
             </property>
-            <!--> <property key="messageAttribute" type="attribute" required="true" >
+            <!--> <property key="insertText" type="attribute" required="true" >
                 <caption>Message</caption>
                 <category>Data source</category>
                 <description>This widget reverses a string.</description>
@@ -24,7 +24,7 @@
                     <attributeType name = "String">
                 </attributeTypes>
             </property>     --> 
-           <property key="messageAttribute" type="attribute">
+           <property key="insertText" type="attribute">
             <caption>Message</caption>
             <category>Data source</category>
             <description>This widget reverses a string.</description>

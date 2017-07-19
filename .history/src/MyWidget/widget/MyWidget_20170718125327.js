@@ -15,14 +15,14 @@ define([
             templateString: widgetTemplate,
             reverseText: " ",
             dropDown: " ",
-            messageAttribute: " ",
+            insertText: " ",
             _contextObject: null,
 
            /* update: function (obj, callback) {
             logger.debug(this.id + ".update");
-            this._contextObject = messageAttribute;
+            this._contextObject = insertText;
            },
-           var myData = _contextObject.get(messageAttribute),*/
+           var myData = _contextObject.get(insertText),*/
            postCreate: function () {
             logger.debug(this.id + ".postCreate");
 
