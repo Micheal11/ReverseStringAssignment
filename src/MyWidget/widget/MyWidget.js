@@ -44,15 +44,15 @@ define([
                     this._contextObject.set(this.backgroundColor, this.colorSelectNode.value);
                 });
 
-               /* this.connect(this.infoTextNode, "click", function (e) {
-                    // Only on mobile stop event bubbling!
-                    this._stopBubblingEventOnMobile(e);
-
-                    // If a microflow has been set execute the microflow on a click.
-                    if (this.mfToExecute !== "") {
-                        this._execMf(this.mfToExecute, this._contextObj.getGuid());
-                    }
-                });*/
+                /* this.connect(this.infoTextNode, "click", function (e) {
+                     // Only on mobile stop event bubbling!
+                     this._stopBubblingEventOnMobile(e);
+ 
+                     // If a microflow has been set execute the microflow on a click.
+                     if (this.mfToExecute !== "") {
+                         this._execMf(this.mfToExecute, this._contextObj.getGuid());
+                     }
+                 });*/
             },
             _execMf: function (mf, guid, cb) {
                 logger.debug(this.id + "._execMf");
@@ -78,16 +78,10 @@ define([
                 logger.debug(this.id + "._updateRendering");
                 if (this._contextObject !== null) {
                     dojoStyle.set(this.domNode, "display", "block");
-<<<<<<< HEAD
-                    var myStrings = this._contextObject.get(this.messageAttribute);
-                    // dojoHtml.set(this.reverseText, this.reversedString(myStrings));
-                    this.reversedString(myStrings);
-=======
                     var textValue = this._contextObject.get(this.insertText);
                     // dojoHtml.set(this.reverseText, this.reversedString(textValue));
                     this.reversedString(textValue);
                     this.saveFunction(_contextObject);
->>>>>>> dc0edbdfde6090233f7548a81044322fab8fa4bc
                     // or
 
                 }
@@ -96,38 +90,36 @@ define([
             reversedString: function (reverseString) {
                 this.reverseText.innerHTML = reverseString.split("").reverse().join("");
             },
-<<<<<<< HEAD
 
-            saveTag: function (_contextObject) {
-                mx.data.commit({
-                    callback: function () {
-                        console.log("Object committed");
-                    },
+            createTag: function () {
+                mx.data.create({
+                    entity: this.reverseEntity,
+                    callback: lang.hitch(this, function (obj) {
+                        obj.set(this.insertText, this.textToReverse.value);
+                        this.saveTag(obj),
+                            console.log("Object created on server");
+                    }),
                     error: function (e) {
-                        console.error("Could not commit object:", e);
+                        console.log("an error occured: " + e);
                     }
                 });
             },
-
-=======
->>>>>>> dc0edbdfde6090233f7548a81044322fab8fa4bc
+            saveTag: function (object) {
+                mx.data.commit({
+                    mxobj: object,
+                    callback: function () {
+                        console.log("Object committed");
+                    },
+                    error: function (error) {
+                        console.log("Error occurred attempting to commit: " + error);
+                    }
+                });
+            },
             _executeCallback: function (cb, from) {
                 if (cb && typeof cb === "function") {
                     cb();
                 }
-<<<<<<< HEAD
             }
-=======
-            },
-            /*saveFunction: function () {
-                mx.data.save({
-                    mxobj: _contextObject,
-                    callback: function () {
-                        console.log("ok");
-                    }
-                });
-            },*/
->>>>>>> dc0edbdfde6090233f7548a81044322fab8fa4bc
         });
     }
 );

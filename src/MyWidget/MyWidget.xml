@@ -3,7 +3,7 @@
     <name>ReverseWidget</name>
     <description>The description of this widget.</description>
      <properties>
-        <property key="insertText" type="attribute">
+        <property key="insertText" type="attribute" entityProperty="reverseEntity" >
             <caption>Data Source</caption>
             <category>Appearance</category>
             <description>A string is reversed by the widget</description>
@@ -17,5 +17,12 @@
             <description>The microflow to execute on click.</description>
             <returnType type="Boolean" />
         </property>
+
+        <property key="reverseEntity" type="entity" required="false" defaultValue="">
+            <caption>Entity</caption>
+            <category>Behavior</category>
+            <description>This is the entity</description>
+        </property>
+
     </properties>
 </widget>
