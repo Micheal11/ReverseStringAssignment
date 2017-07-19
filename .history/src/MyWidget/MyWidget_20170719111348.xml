@@ -11,6 +11,8 @@
                 <attributeType name="String" />
             </attributeTypes>
         </property>
+        <property key="entity" type="attribute">
+        </property>
         <property key="mfToExecute" type="microflow" required="true" defaultValue="">
             <caption>Microflow</caption>
             <category>Behavior</category>
