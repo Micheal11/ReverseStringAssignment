@@ -3,7 +3,7 @@
     <name>ReverseWidget</name>
     <description>The description of this widget.</description>
      <properties>
-        <property key="messageAttribute" type="attribute">
+        <property key="insertText" type="attribute">
             <caption>Data Source</caption>
             <category>Appearance</category>
             <description>A string is reversed by the widget</description>

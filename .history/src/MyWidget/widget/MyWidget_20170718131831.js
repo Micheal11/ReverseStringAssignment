@@ -15,7 +15,7 @@ define([
             templateString: widgetTemplate,
             reverseText: " ",
             dropDown: " ",
-            messageAttribute: " ",
+            insertText: " ",
             _contextObject: null,
 
            postCreate: function () {
@@ -40,7 +40,7 @@ define([
             if (this._contextObject !== null) {
                 dojoStyle.set(this.domNode, "display", "block");
 
-                var myStrings = this._contextObject.get(this.messageAttribute);
+                var textValue = this._contextObject.get(this.insertText);
 
                
                 dojoHtml.set(this.infoTextNode, this.messageString);

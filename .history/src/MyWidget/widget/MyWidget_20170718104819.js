@@ -15,7 +15,7 @@ define([
             templateString: widgetTemplate,
             reverseText: null,
             dropDown: null,
-            messageAttribute: null,
+            insertText: null,
             reversingFunction: function () {
                 this.reverseText.innerHTML = ":" + reversedString(this.myPointedString.value);
             },

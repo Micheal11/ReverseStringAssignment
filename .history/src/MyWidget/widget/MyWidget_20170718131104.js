@@ -15,7 +15,7 @@ define([
             templateString: widgetTemplate,
             reverseText: " ",
             dropDown: " ",
-            messageAttribute: " ",
+            insertText: " ",
             _contextObject: null,
 
            postCreate: function () {
