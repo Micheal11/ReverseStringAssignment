@@ -37,9 +37,9 @@ define([
             callMicroflow: function () {
                 this._execMf(this.mfToExecute, this._contextObject.getGuid());
             },
-            _setupEvents: function () {
+           /* _setupEvents: function () {
                 logger.debug(this.id + "._setupEvents");
-                this.connect(this.reverseText, "change", function (e) {
+                this.connect(this.colorSelectNode, "change", function (e) {
                     // Function from mendix object to set an attribute.
                     this._contextObject.set(this.backgroundColor, this.colorSelectNode.value);
                 });
@@ -53,7 +53,7 @@ define([
                         this._execMf(this.mfToExecute, this._contextObj.getGuid());
                     }
                 });*/
-            },
+            },*/
             _execMf: function (mf, guid, cb) {
                 logger.debug(this.id + "._execMf");
                 if (mf && guid) {

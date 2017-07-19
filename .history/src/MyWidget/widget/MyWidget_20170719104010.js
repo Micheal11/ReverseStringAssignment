@@ -39,7 +39,7 @@ define([
             },
             _setupEvents: function () {
                 logger.debug(this.id + "._setupEvents");
-                this.connect(this.reverseText, "change", function (e) {
+                this.connect(this.colorSelectNode, "change", function (e) {
                     // Function from mendix object to set an attribute.
                     this._contextObject.set(this.backgroundColor, this.colorSelectNode.value);
                 });

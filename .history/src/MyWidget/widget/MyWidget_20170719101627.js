@@ -39,20 +39,17 @@ define([
             },
             _setupEvents: function () {
                 logger.debug(this.id + "._setupEvents");
-                this.connect(this.reverseText, "change", function (e) {
+                this.connect(this.colorSelectNode, "change", function (e) {
                     // Function from mendix object to set an attribute.
                     this._contextObject.set(this.backgroundColor, this.colorSelectNode.value);
                 });
 
-               /* this.connect(this.infoTextNode, "click", function (e) {
-                    // Only on mobile stop event bubbling!
+                this.connect(this.infoTextNode, "click", function (e) {
                     this._stopBubblingEventOnMobile(e);
-
-                    // If a microflow has been set execute the microflow on a click.
                     if (this.mfToExecute !== "") {
                         this._execMf(this.mfToExecute, this._contextObj.getGuid());
                     }
-                });*/
+                });
             },
             _execMf: function (mf, guid, cb) {
                 logger.debug(this.id + "._execMf");
