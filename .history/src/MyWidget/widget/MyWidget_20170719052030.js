@@ -55,14 +55,16 @@ define([
                     cb();
                 }
             },
-            saveFunction: function () {
-                mx.data.save({
-                    mxobj: _contextObject,
-                    callback: function () {
-                        console.log("ok");
-                    }
-                });
-            },
+           /* mx:data.create({
+                entity: _contextObject,
+                callback: function (object) {
+                    console.log("Object created on server");
+                },
+                error: function (e) {
+                    console.log("an error occured: " + e);
+                },
+                //this.entity.set();
+            }),*/
         });
     }
 );

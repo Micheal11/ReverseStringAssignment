@@ -56,13 +56,8 @@ define([
                 }
             },
             saveFunction: function () {
-                mx.data.save({
-                    mxobj: _contextObject,
-                    callback: function () {
-                        console.log("ok");
-                    }
-                });
-            },
+                
+            }
         });
     }
 );
